@@ -8,8 +8,8 @@ services:
     ports:
     - "3000:3000"
     volumes:
-      - ./front:/app/front
-    entrypoint: "npm run serve"
+      - .:/app/
+    # entrypoint: "npm run serve"
     tty: true
 
 
