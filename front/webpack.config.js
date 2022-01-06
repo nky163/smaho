@@ -13,13 +13,24 @@ module.exports = {
   },
   module: {
     rules: [
+      // {
+      //   enforce: 'pre',
+      //   test: /\.jsx?$/,
+      //   exclude: /(node_modules|dist)/,
+      //   use: {
+      //     loader: '@babel/eslint-parser',
+      //     options: {
+      //       fix: true,
+      //     }
+      //   }
+      // },
       {
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
+        test: /.jsx?$/,
+        exclude: /(node_modules|dist)/,
         use: {
           loader: 'babel-loader',
           options: {
-            presets: [
+              presets: [
               '@babel/preset-env',
               '@babel/preset-react',
             ],
