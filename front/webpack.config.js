@@ -1,7 +1,9 @@
 const path = require('path');
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
   mode: process.env.NODE_ENV || 'development',
+  devtool: 'source-map',
   entry: './src/app.js',
   output: {
     filename: 'main.js',
@@ -13,17 +15,6 @@ module.exports = {
   },
   module: {
     rules: [
-      // {
-      //   enforce: 'pre',
-      //   test: /\.jsx?$/,
-      //   exclude: /(node_modules|dist)/,
-      //   use: {
-      //     loader: '@babel/eslint-parser',
-      //     options: {
-      //       fix: true,
-      //     }
-      //   }
-      // },
       {
         test: /.jsx?$/,
         exclude: /(node_modules|dist)/,
@@ -39,6 +30,12 @@ module.exports = {
       }
     ]
   },
+  plugins: [
+    new ESLintPlugin({
+      extensions: ['.js', '.jsx'],
+      exclude: 'node_modules'
+    }),
+  ],
   devServer: {
     static: {
       directory: __dirname,
