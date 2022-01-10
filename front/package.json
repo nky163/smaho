@@ -7,8 +7,8 @@
     "build": "webpack",
     "serve": "webpack-dev-server",
     "test": "jest",
-    "format": "prettier --write app.js",
-    "lint": "eslint --fix app.js",
+    "format": "prettier --write src/app.js",
+    "lint": "eslint --fix src/app.js",
     "fix": "npm run format && npm run lint"
   },
   "author": "",
